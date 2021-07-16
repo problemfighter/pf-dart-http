@@ -1,5 +1,5 @@
 import 'dart:io';
-import 'package:pf_dart_http/src/pf_http_requester.dart';
+import 'package:pf_dart_http/src/pf_dart_http.dart';
 
 
 void printResponse(PFHttpResponse response){
@@ -50,28 +50,28 @@ Future<void> main() async {
   var uploadFileMap = {
     "name": file
   };
-  response = await PFHTTPRequester.instance().uploadRequest(baseURL + "api/v1/card/upload-file", uploadFileMap);
+  response = await PFDartHTTP.instance().uploadRequest(baseURL + "api/v1/card/upload-file", uploadFileMap);
   printResponse(response);
 
 
   // FORM Data POST Request
-  response = await PFHTTPRequester.instance().POSTRequest(baseURL + "api/v1/card/form-data", data: data);
+  response = await PFDartHTTP.instance().POSTRequest(baseURL + "api/v1/card/form-data", data: data);
   printResponse(response);
 
   // JSON POST Request
-  response = await PFHTTPRequester.instance().jsonPOSTRequest(baseURL + "api/v1/card/create", data: jsonCreate);
+  response = await PFDartHTTP.instance().jsonPOSTRequest(baseURL + "api/v1/card/create", data: jsonCreate);
   printResponse(response);
 
   // Simple GET Request
-  response = await PFHTTPRequester.instance().GETRequest(baseURL + "api/v1/card/list");
+  response = await PFDartHTTP.instance().GETRequest(baseURL + "api/v1/card/list");
   printResponse(response);
 
   // PUT JSON Request
-  response = await PFHTTPRequester.instance().jsonPUTRequest(baseURL + "api/v1/card/update", data: jsonUpdate);
+  response = await PFDartHTTP.instance().jsonPUTRequest(baseURL + "api/v1/card/update", data: jsonUpdate);
   printResponse(response);
 
   // GET Request with parameter 1
-  response = await PFHTTPRequester.instance().GETRequest(baseURL + "api/v1/card/details/1");
+  response = await PFDartHTTP.instance().GETRequest(baseURL + "api/v1/card/details/1");
   printResponse(response);
 
 
@@ -80,11 +80,11 @@ Future<void> main() async {
     'per-page': '1',
     'page': '1',
   };
-  response = await PFHTTPRequester.instance().GETRequest(baseURL + "api/v1/card/list", params: params);
+  response = await PFDartHTTP.instance().GETRequest(baseURL + "api/v1/card/list", params: params);
   printResponse(response);
 
   // GET Request with query param
-  response = await PFHTTPRequester.instance().GETRequest(baseURL + "api/v1/card/list?sort-order=asc");
+  response = await PFDartHTTP.instance().GETRequest(baseURL + "api/v1/card/list?sort-order=asc");
   printResponse(response);
 
   // GET Request with query param & with data
@@ -92,23 +92,23 @@ Future<void> main() async {
     'per-page': '5',
     'page': '1',
   };
-  response = await PFHTTPRequester.instance().GETRequest(baseURL + "api/v1/card/list?sort-order=asc", params: params);
+  response = await PFDartHTTP.instance().GETRequest(baseURL + "api/v1/card/list?sort-order=asc", params: params);
   printResponse(response);
 
   // DELETE GET Request with parameter 1
-  response = await PFHTTPRequester.instance().DELERERequest(baseURL + "api/v1/card/delete/1");
+  response = await PFDartHTTP.instance().DELERERequest(baseURL + "api/v1/card/delete/1");
   printResponse(response);
 
   // GET Request with query param
-  response = await PFHTTPRequester.instance().GETRequest(baseURL + "api/v1/card/list?sort-order=asc");
+  response = await PFDartHTTP.instance().GETRequest(baseURL + "api/v1/card/list?sort-order=asc");
   printResponse(response);
 
   // GET Request with parameter 1
-  response = await PFHTTPRequester.instance().GETRequest(baseURL + "api/v1/card/restore/1");
+  response = await PFDartHTTP.instance().GETRequest(baseURL + "api/v1/card/restore/1");
   printResponse(response);
 
   // GET Request with query param
-  response = await PFHTTPRequester.instance().GETRequest(baseURL + "api/v1/card/list?sort-order=asc");
+  response = await PFDartHTTP.instance().GETRequest(baseURL + "api/v1/card/list?sort-order=asc");
   printResponse(response);
 
 

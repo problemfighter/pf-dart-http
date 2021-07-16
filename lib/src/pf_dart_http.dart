@@ -10,7 +10,7 @@ class PFHttpResponse {
 
 
 
-class PFHTTPRequester {
+class PFDartHTTP {
 
   static const APPLICATION_JSON = "application/json";
   static const CONTENT_TYPE = "Content-Type";
@@ -22,7 +22,7 @@ class PFHTTPRequester {
 
   Map<String, String> _headers = {};
 
-  PFHTTPRequester addHeader(String key, String value) {
+  PFDartHTTP addHeader(String key, String value) {
     _headers[key] = value;
     return this;
   }
@@ -31,13 +31,13 @@ class PFHTTPRequester {
     return _headers;
   }
 
-  PFHTTPRequester clearHeader() {
+  PFDartHTTP clearHeader() {
     _headers = {};
     return this;
   }
 
-  static PFHTTPRequester instance() {
-    return PFHTTPRequester();
+  static PFDartHTTP instance() {
+    return PFDartHTTP();
   }
 
   Future<PFHttpResponse> requestTo(String url, String method, {Object? data}) async {
