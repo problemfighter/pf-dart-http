@@ -1,7 +1,7 @@
 name: pf_dart_http
 version: 1.0.0
 description: >-
-  Problem Fighter make a library for HTTP Request, Which is basically use of Dart HTTP package. The object of this library
+  Problem Fighter make a library for HTTP Request, Which is basically use of Dart HTTP package. The objective of this library
   is use the dart http library with easy way with all combination such as POST, GET, PUT, DELETE, File upload etc,
   you may use the single file codes directly, without include this library.
 homepage: https://github.com/problemfighter/pf-dart-http
